@@ -1,0 +1,54 @@
+@using HRApp.Entities;
+
+<h1>Employees List</h1>
+<hr/>
+
+@{
+    <!-- List<Employee> emps=(List<Employee>)ViewData["employees"]; -->
+        List<Employee> emps=ViewBag.employees;
+        <!-- <table>
+        @foreach(Employee e in emps)
+        {
+            <tr>
+                <td>@e.Id</td>
+                <td>@e.Name</td>
+                <td>@e.BasicSal</td>
+                <td>@e.DailyAllo</td>
+                <td>@e.Tax</td>
+                <td>@e.NoOfWorkingDays</td>
+            </tr>
+        }
+        </table> -->
+
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Basic Salary</th>
+                <th scope="col">Daily Allowance</th>
+                <th scope="col">Tax</th>
+                <th scope="col">No of working Days</th>
+                <th scope="col">Details</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+                
+              </tr>
+            </thead>
+            @foreach(Employee e in emps)
+        {
+            <tr>
+                <td>@e.Id</td>
+                <td>@e.Name</td>
+                <td>@e.BasicSal</td>
+                <td>@e.DailyAllo</td>
+                <td>@e.Tax</td>
+                <td>@e.NoOfWorkingDays</td>
+                <td><a href="/Employees/Details/@e.Id">Details</a></td>
+                <td><a href="/Employees/Update/@e.Id">Update</a></td>
+                <td><a href="/Employees/Delete/@e.Id">Delete</a></td>
+            </tr>
+        }
+          </table>
+}

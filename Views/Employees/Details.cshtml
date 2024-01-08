@@ -1,0 +1,14 @@
+@using HRApp.Entities;
+
+<h2>Employee Details</h2>
+@{
+    <!-- Employee e=(Employee)ViewData["employee"]; -->
+    Employee e=(Employee)TempData["employee"];
+    <div class="card" style="width: 18rem;">
+        <img src="/images/Us.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">@e.Name</h5>
+          <p class="card-text">Daily Allowance :@e.DailyAllo<br>Tax : @e.Tax<br>Number of Working Days : @e.NoOfWorkingDays<br>Id : @e.Id<br>Basic Sal : @e.BasicSal</p>
+        </div>
+      </div>
+}
